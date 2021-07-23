@@ -31,14 +31,18 @@ public class DoodleCanvas : MonoBehaviour
         }
     }
 
-    public void Paint(GameObject prefab, Vector3 position, Quaternion rotation)
+    public void Paint(GameObject prefab, Color color, Vector3 position, Quaternion rotation)
     {
         var brush = Instantiate(prefab, position, rotation, transform);
+        var brushMaterial = brush.GetComponent<Renderer>().material;
+
+        brushMaterial.color = color;
 
         camera.Render();
         Graphics.Blit(captureTexture, displayTexture);
 
         Destroy(brush);
+        Destroy(brushMaterial);
     }
 
     private Vector2Int GetScreenResolution()
