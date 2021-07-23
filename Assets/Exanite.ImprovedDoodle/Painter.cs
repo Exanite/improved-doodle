@@ -8,7 +8,7 @@ namespace Exanite.ImprovedDoodle
     {
         [Header("Configuration")]
         public GameObject[] brushes;
-        public new Camera camera;
+        public Camera camera;
         public DoodleCanvas doodleCanvas;
 
         public Vector3 hsv = new Vector3(0, 1, 1);

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class DoodleCanvas : MonoBehaviour
 {
-    public new Camera camera;
+    public Camera camera;
     public RawImage display;
 
     private RenderTexture captureTexture;
@@ -61,5 +61,8 @@ public class DoodleCanvas : MonoBehaviour
 
         display.texture = displayTexture;
         camera.targetTexture = captureTexture;
+        
+        camera.Render();
+        Graphics.Blit(captureTexture, displayTexture);
     }
 }
