@@ -20,7 +20,6 @@ public class DoodleCanvas : MonoBehaviour
         UpdateRenderTextureResolution(resolution);
 
         camera.enabled = false;
-        camera.targetTexture = captureTexture;
     }
 
     private void Update()
@@ -57,5 +56,6 @@ public class DoodleCanvas : MonoBehaviour
         displayTexture = new RenderTexture(options);
 
         display.texture = displayTexture;
+        camera.targetTexture = captureTexture;
     }
 }
